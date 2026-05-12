@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border = "1">
+        <tr>
+            <th>Subject</td>
+            <th>Credit</td>
+            <th>Mark</td>
+            <th>Grade</td>
+        </tr>
+
+        {% for mark in marks %}
+        <tr>
+            <td>{{mark.subject}}</td>
+            <td>{{mark.credit}}</td>
+            <td>{{mark.mark}}</td>
+            <td>
+                {% if mark.mark >= 80 %}
+                A+
+                {% elif mark.mark >= 70 %}
+                A
+                {% elif mark.mark >= 60 %}
+                A-
+                {% elif mark.mark >= 50 %}
+                B
+                {% elif mark.mark >= 40 %}
+                C
+                {% elif mark.mark >= 30 %}
+                D
+                {% else %}
+                F
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table border = "1">
+        <tr>
+            <th>ID</td>
+            <th>Name</td>
+            <th>Age</td>
+        </tr>
+
+        {% for student in stdInfo %}
+        <tr>
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
